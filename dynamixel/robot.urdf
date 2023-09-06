@@ -1,0 +1,58 @@
+<robot name="onshape">
+<link name="b3b-eh">
+<visual>
+<origin xyz="0.00014051558066032463802 0.0089489452562700484012 5.6733572924112882913e-05" rpy="0 -0 0" />
+<geometry>
+<mesh filename="package:///b3b-eh.stl"/>
+</geometry>
+<material name="b3b-eh_material">
+<color rgba="0.97254901960784312376 0.52941176470588235947 0.0039215686274509803377 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0.00014051558066032463802 0.0089489452562700484012 5.6733572924112882913e-05" rpy="0 -0 0" />
+<geometry>
+<mesh filename="package:///b3b-eh.stl"/>
+</geometry>
+</collision>
+<inertial>
+<origin xyz="0.00015404531876094234438 0.01671196103132074201 -0.00747294724399690663" rpy="0 0 0"/>
+<mass value="0.015779352001716807213" />
+<inertia ixx="2.1825100915897913035e-06" ixy="5.7724533878942724344e-10"  ixz="1.4878824484712959784e-09" iyy="2.016279665304989779e-06" iyz="-6.8620142352252829615e-09" izz="1.1534957920407217784e-06" />
+</inertial>
+</link>
+
+<link name="bts2_m2_6x8">
+<visual>
+<origin xyz="0 0 0.0010125000000000003789" rpy="1.570796326794896558 -0 0" />
+<geometry>
+<mesh filename="package:///bts2_m2_6x8.stl"/>
+</geometry>
+<material name="bts2_m2_6x8_material">
+<color rgba="0.98039215686274505668 0.71372549019607844922 0.0039215686274509803377 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0 0 0.0010125000000000003789" rpy="1.570796326794896558 -0 0" />
+<geometry>
+<mesh filename="package:///bts2_m2_6x8.stl"/>
+</geometry>
+</collision>
+<inertial>
+<origin xyz="2.8382548148871832682e-13 3.1770376859625962386e-06 -0.0034721360682634758339" rpy="0 0 0"/>
+<mass value="0.00071061517803278398918" />
+<inertia ixx="1.1853693198574592055e-08" ixy="0"  ixz="0" iyy="1.1895333795592530733e-08" iyz="-1.4378793964898083667e-12" izz="2.0141211433863992807e-08" />
+</inertial>
+</link>
+
+<joint name="1" type="revolute">
+<origin xyz="0.00014051558066032463802 0.0071989452562700477142 5.6733572924112882913e-05" rpy="-1.570796326794896558 -1.570796326794896558 0" />
+<parent link="b3b-eh" />
+<child link="bts2_m2_6x8" />
+<axis xyz="0 0 1"/>
+<limit effort="1" velocity="20" />
+<joint_properties friction="0.0"/>
+</joint>
+
+
+</robot>
